@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Учасник</th>
+      <% @segments.each do |segment| %>
+        <th><%= segment.name %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.full_name %></td>
+        <% user.results.each do |result| %>
+          <td><%= result.moving_time %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
