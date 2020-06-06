@@ -2,8 +2,7 @@ class UsersController < InheritedResources::Base
 
   private
 
-    def user_params
-      params.require(:user).permit(:name,, :full_name,, :link)
-    end
-
+  def user_params
+    params.require(:user).permit(:name, :full_name, :link)
+  end
 end
