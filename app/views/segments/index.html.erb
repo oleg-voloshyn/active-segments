@@ -3,7 +3,7 @@
     <tr>
       <th>Учасник</th>
       <% @segments.each do |segment| %>
-        <th><%= segment.name %></th>
+        <th><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></th>
       <% end %>
     </tr>
   </thead>
@@ -11,9 +11,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.full_name %></td>
+        <td><%=link_to user.full_name, "#{user.link}", target: "_blank" %></td>
         <% user.results.each do |result| %>
-          <td><%= result.moving_time %></td>
+          <td><%= seconds_to_hms(result.moving_time) %></td>
         <% end %>
       </tr>
     <% end %>
