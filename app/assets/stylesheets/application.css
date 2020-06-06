@@ -10,6 +10,36 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
+
+table tr th {
+  text-align: center;
+}
+
+img {
+  border-radius: 50%;
+}
+
+table tr th a {
+  text-decoration: none !important;
+}
+
+table tr td {
+  border: 1px solid gray;
+  font-size: 15px;
+  text-align: center;
+  vertical-align: inherit;
+}
+
+.user-avatar {
+  margin-top: 20px;
+}
+
+.user-name a {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
