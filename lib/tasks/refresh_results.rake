@@ -2,7 +2,7 @@
 
 namespace :active_segments do
   task refresh_results: :pause_scheduler do
-    @client ||= Strava::Api::Client.new(access_token: ActiveSegments::Application.credentials.strava_token)
+    @client ||= Strava::Api::Client.new(access_token: ENV["STRAVA"])
     Segment.all.each do |segment|
       segment_leaderboard = @client.segment_leaderboard(segment.link)
       segment_leaderboard.entries.each do |e|
