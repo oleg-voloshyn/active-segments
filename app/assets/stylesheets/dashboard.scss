@@ -10,4 +10,27 @@ body#dashboard {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+
+  .race-wrapper {
+    background-color: white;
+    width: 550px;
+    margin: 200px auto;
+    opacity: 0.8;
+    padding: 10px 20px;
+
+    p {
+      color: black;
+      font-size: 20px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .race-wrapper {
+      background-color: white;
+      width: 90%;
+      margin: 60% auto;
+
+      h3 { font-size: 25px }
+      p { font-size: 18px }
+    }
+  }
 }
