@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :results, dependent: :destroy
+  belongs_to :race
   after_create :set_results
 
   def set_results
