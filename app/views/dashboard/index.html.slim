@@ -1,9 +1,21 @@
 body#dashboard
   div.race-wrapper
-    h3= @race.name
-    p Локація: місто Черкаси
-    p= "#{@race.segments.size} Strava сегментів"
-    p= "Загальний кілометраж #{@distance} км."
-    p= "Кількість учасників: #{@race.users.size}"
-    p= "Період: #{@race.start_date} - #{@race.end_date}"
-    button Взяти участь
+    h2= @race.name
+    p
+      span Локація:
+      span.value= " місто Черкаси"
+    p
+      span.value= @race.segments.size
+      span= " Strava сегментів"
+    p
+      span= "Загальний кілометраж "
+      span.value= "#{@distance} км."
+    p
+      span= "Кількість учасників: "
+      span.value= "#{@race.users.size}"
+    p
+      span= "Період: "
+      span.value= "#{@race.start_date.strftime("%Y-%m-%d")} - #{@race.end_date.strftime("%Y-%m-%d")}"
+    div.buttons-wrapper
+      button Взяти участь
+      button.right Турнірна таблиця
