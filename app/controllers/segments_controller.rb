@@ -1,8 +1,9 @@
 class SegmentsController < InheritedResources::Base
 
   def index
-    @segments = Segment.all
-    @users = User.all
+    race = Race.last
+    @segments = race.segments
+    @users = race.users
   end
 
   private

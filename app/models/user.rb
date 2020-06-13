@@ -4,7 +4,7 @@ class User < ApplicationRecord
   after_create :set_results
 
   def set_results
-    Segment.all.each do |segment|
+    race.segments.each do |segment|
       Result.create(user_id: id, segment_id: segment.id, points: 0, moving_time: 0)
     end
   end
