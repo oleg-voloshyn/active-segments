@@ -1,8 +1,9 @@
 body#dashboard
   div.race-wrapper
-    h3 Active Segments
-    p 10 Strava сегментів
+    h3= @race.name
+    p Локація: місто Черкаси
+    p= "#{@race.segments.size} Strava сегментів"
     p Загальний кілометраж
-    p Кількість учасників
-    p період:
+    p= "Кількість учасників: #{@race.users.size}"
+    p= "Період: #{@race.start_date} - #{@race.end_date}"
     button Взяти участь
