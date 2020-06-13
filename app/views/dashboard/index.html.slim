@@ -3,7 +3,7 @@ body#dashboard
     h3= @race.name
     p Локація: місто Черкаси
     p= "#{@race.segments.size} Strava сегментів"
-    p Загальний кілометраж
+    p= "Загальний кілометраж #{@distance} км."
     p= "Кількість учасників: #{@race.users.size}"
     p= "Період: #{@race.start_date} - #{@race.end_date}"
     button Взяти участь
