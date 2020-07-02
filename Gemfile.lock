@@ -250,7 +250,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     strava-ruby-client (0.4.0)
       activesupport
       faraday (>= 1.0.0)
@@ -311,7 +310,6 @@ DEPENDENCIES
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   strava-ruby-client
   turbolinks (~> 5)
   tzinfo-data

@@ -3,6 +3,8 @@ class User < ApplicationRecord
   belongs_to :race
   after_create :set_results
 
+  enum gender: %i[male female]
+
   def set_results
     race.segments.each do |segment|
       Result.create(user_id: id, segment_id: segment.id, points: 0, moving_time: 0)
