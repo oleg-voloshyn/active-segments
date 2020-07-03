@@ -19,7 +19,7 @@ table tr th {
   text-align: center;
 }
 
-img {
+table img {
   border-radius: 50%;
 }
 
@@ -46,4 +46,40 @@ table tr td {
   font-size: 14px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.segments-wrapper {
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 540px;
+  background-color: white;
+}
+
+.segment-title {
+  color: #5f52ca;
+  font-weight: bold;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.segment-gif {
+  margin: 10px 0;
+}
+
+.segment-block {
+  padding-top: 20px;
+  margin: 20px;
+}
+
+.segment-value, .segment-value a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.segment-value a:hover {
+  color: #5f52ca;
+  text-decoration: none;
+  background-color: white;
 }

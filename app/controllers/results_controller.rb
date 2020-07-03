@@ -1,5 +1,11 @@
 class ResultsController < InheritedResources::Base
 
+  def index
+    race = Race.last
+    @segments = race.segments
+    @users = race.users
+  end
+
   private
 
   def result_params

@@ -1,33 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Results</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Moving time</th>
-      <th>Points</th>
-      <th>User</th>
-      <th>Segment</th>
-      <th colspan="3"></th>
+      <th>Учасник</th>
+      <th>BIB</th>
+      <% @segments.each do |segment| %>
+        <th><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
-    <% @results.each do |result| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= result.moving_time %></td>
-        <td><%= result.points %></td>
-        <td><%= result.user %></td>
-        <td><%= result.segment_id %></td>
-        <td><%= link_to 'Show', result %></td>
-        <td><%= link_to 'Edit', edit_result_path(result) %></td>
-        <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <p class="user-avatar"><%=image_tag "avatars/#{user.bib}.jpg", height: '96', width: '96'%></p>
+          <p class="user-name"><%=link_to user.full_name, "#{user.link}", target: "_blank" %></p>
+        </td>
+        <td><%= user.bib %></td>
+        <% user.results.each do |result| %>
+          <td>
+            <span><strong>Час: </strong></span>
+            <span><%= seconds_to_hms(result.moving_time) %></span>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Result', new_result_path %>
