@@ -17,5 +17,5 @@ body#dashboard
       span= "Період: "
       span.value= "#{@race.start_date.strftime("%Y-%m-%d")} - #{@race.end_date.strftime("%Y-%m-%d")}"
     div.buttons-wrapper
-      button Взяти участь
-      button.right Турнірна таблиця
+      =button_to "Сегменти", segments_path, method: :get
+      =button_to "Турнірна таблиця", results_path, { class: "right", method: :get }

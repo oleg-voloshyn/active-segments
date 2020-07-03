@@ -29,7 +29,11 @@ body#dashboard {
 
     .buttons-wrapper { margin-bottom: 20px }
 
-    button {
+    form.button_to {
+      display: inline;
+    }
+
+    input[type=submit] {
       border-radius: 30px;
       background: -webkit-linear-gradient(left, #b64e96, #5f52ca);
       background: linear-gradient(to right, #b64e96, #5f52ca);
