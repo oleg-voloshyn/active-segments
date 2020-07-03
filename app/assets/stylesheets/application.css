@@ -41,12 +41,13 @@ table tr td {
 @media screen and (max-width: 768px) {
   body { margin: 5px !important }
   .segment-gif img {
-    margin: 0 auto !important;
     height: 290px !important;
     width: 290px !important;
   }
   .segment-block {
-    margin: 20px 0 !important;
+    float: unset !important;
+    width: 290px !important;
+    margin: 20px auto !important;
   }
 }
 
