@@ -48,13 +48,6 @@ table tr td {
   font-weight: bold;
 }
 
-.segments-wrapper {
-  border-radius: 8px;
-  margin: 0 auto;
-  width: 540px;
-  background-color: white;
-}
-
 .segment-title {
   color: #5f52ca;
   font-weight: bold;
@@ -69,6 +62,9 @@ table tr td {
 .segment-block {
   padding-top: 20px;
   margin: 20px;
+  border-radius: 8px;
+  background-color: white;
+  float: left;
 }
 
 .segment-value, .segment-value a {

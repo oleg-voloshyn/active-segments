@@ -1,15 +1,13 @@
 <div class="segments-wrapper">
   <% @segments.each do |segment| %>
     <div class="segment-block">
-      <div>
-        <span class="segment-title">Сегмент </span>
-        <span class="segment-value">
+      <div class="segment-val">
+        <span>
           <%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %>
         </span>
+        <span><%= segment.distance %> км.</span>
       </div>
       <div>
-        <span class="segment-title">Дистанція </span>
-        <span class="segment-value"><%= segment.distance %> км.</span>
       </div>
       <div class="segment-gif">
         <%=image_tag "videos/#{segment.link}.gif", height: '500', width: '500'%>
