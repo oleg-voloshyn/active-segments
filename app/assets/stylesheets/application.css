@@ -23,6 +23,10 @@ img {
   border-radius: 50%;
 }
 
+table thead tr {
+  height: 40px;
+}
+
 table tr th a {
   text-decoration: none !important;
 }
