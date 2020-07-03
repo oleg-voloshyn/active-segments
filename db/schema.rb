@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_154547) do
+ActiveRecord::Schema.define(version: 2020_07_03_063408) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -75,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_154547) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "race_id"
     t.integer "gender", default: 0
+    t.string "bib"
   end
 
 end
