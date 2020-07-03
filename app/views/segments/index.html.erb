@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Учасник</th>
+      <th>BIB</th>
       <% @segments.each do |segment| %>
         <th><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></th>
       <% end %>
@@ -12,9 +13,10 @@
     <% @users.each do |user| %>
       <tr>
         <td>
-          <p class="user-avatar"><%=image_tag "avatars/#{user.full_name}.jpg", height: '96', width: '96'%></p>
+          <p class="user-avatar"><%=image_tag "avatars/#{user.bib}.jpg", height: '96', width: '96'%></p>
           <p class="user-name"><%=link_to user.full_name, "#{user.link}", target: "_blank" %></p>
         </td>
+        <td><%= user.bib %></td>
         <% user.results.each do |result| %>
           <td>
             <span><strong>Час: </strong></span>
