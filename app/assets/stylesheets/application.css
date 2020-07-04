@@ -142,3 +142,11 @@ table tr td {
   text-transform: uppercase;
   text-decoration: none;
 }
+
+.prizes {
+  text-align: center;
+}
+
+.prizes img {
+  width: 290px;
+}
