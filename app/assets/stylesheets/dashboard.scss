@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 body {
+  padding: 0;
+  margin: 0 !important;
   background-image: image-url("welcome.jpg");
   td {
     background-color: white;
@@ -69,7 +71,7 @@ body#dashboard {
   @media screen and (max-width: 768px) {
     .race-wrapper {
       background-color: white;
-      width: 90%;
+      width: 96%;
       margin: 40% auto;
 
       button { font-size: 11px }

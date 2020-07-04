@@ -1,0 +1,13 @@
+nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.bg-primary
+  .container
+    = link_to "Active Segments", root_path, class: "navbar-brand"
+    button.navbar-toggler data-target="#main_nav" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #main_nav.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          = link_to "Рейтингова система", root_path, class: "nav-link"
+        li.nav-item
+          = link_to "Положення турніру", root_path, class: "nav-link"
+        li.nav-item
+          = link_to "Призовий фонд", root_path, class: "nav-link"
