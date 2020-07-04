@@ -107,3 +107,38 @@ table tr td {
   text-decoration: none;
   background-color: white;
 }
+
+.points {
+  background: white;
+  border-radius: 8px;
+  opacity: 0.95;
+  width: 38%;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .points {
+    width: 100%;
+  }
+}
+
+.points p {
+  font-size: 16px;
+}
+
+.points h2 {
+  color: #5f52ca;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.formula {
+  text-align: center;
+}
+
+.points a, .points a:hover {
+  color: #5f52ca;
+  text-transform: uppercase;
+  text-decoration: none;
+}
