@@ -15,5 +15,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.sticky-top.bg-primary
           = link_to "Призовий фонд", page_path(:prizes), class: "nav-link"
         li.nav-item
           = link_to "Сегменти", segments_path, class: "nav-link"
-        li.nav-item
-          = link_to "Рейтинг", results_path, class: "nav-link"
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle data-toggle="dropdown" href="#" Рейтинг
+          ul.dropdown-menu.dropdown-menu-right
+            li
+              = link_to "Чоловіки", results_path(gender: "male"), class: "dropdown-item"
+            li
+              = link_to "Жінки", results_path(gender: "female"), class: "dropdown-item"
