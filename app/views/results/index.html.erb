@@ -2,7 +2,6 @@
   <thead>
     <tr>
       <th>Учасник</th>
-      <th>BIB</th>
       <% @segments.each do |segment| %>
         <th><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></th>
       <% end %>
