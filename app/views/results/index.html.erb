@@ -15,9 +15,12 @@
         <td>
           <p class="user-avatar"><%=image_tag "avatars/#{user.bib}.jpg", height: '96', width: '96'%></p>
           <p class="user-name"><%=link_to user.full_name, "#{user.link}", target: "_blank" %></p>
+          <p>
+            <span><b>bib: </b></span>
+            <span><%= user.bib %></span>
+          </p>
         </td>
-        <td><%= user.bib %></td>
-        <% user.results.each do |result| %>
+        <% user.results.order(:segment_id).each do |result| %>
           <td>
             <span><strong>Час: </strong></span>
             <span><%= seconds_to_hms(result.moving_time) %></span>

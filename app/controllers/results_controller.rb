@@ -2,7 +2,7 @@ class ResultsController < InheritedResources::Base
 
   def index
     race = Race.last
-    @segments = race.segments
+    @segments = race.segments.order(:id)
     @users = params[:gender] == "female" ? race.users.where(gender: "female") : race.users.where(gender: "male")
   end
 
