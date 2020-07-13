@@ -8,6 +8,6 @@ class SegmentsController < InheritedResources::Base
   private
 
   def segment_params
-    params.require(:segment).permit(:name, :link)
+    params.require(:segment).permit(:name, :link, :rout)
   end
 end
