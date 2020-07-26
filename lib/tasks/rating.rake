@@ -5,10 +5,10 @@ namespace :active_segments do
     men_ids = User.where(gender: 0)
     woman_ids = User.where(gender: 1)
     Segment.all.each do |segment|
-      men_results = segment.results.where(user_id: men_ids)
-      woman_results = segment.results.where(user_id: woman_ids)
-      men_lider = results.pluck(:moving_time).min.to_f
-      woman_lider = results.pluck(:moving_time).min.to_f
+      men_results = Result.where(user_id: men_ids, segment_id: segment.id)
+      woman_results = Result.where(user_id: woman_ids, segment_id: segment.id)
+      men_lider = men_results.pluck(:moving_time).min.to_f
+      woman_lider = woman_results.pluck(:moving_time).min.to_f
       men_results.each do |result|
         next if result.moving_time.zero?
 
