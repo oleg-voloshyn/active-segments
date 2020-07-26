@@ -23,7 +23,7 @@
         <td>
           <p>
             <span>Рейтинг: </span>
-            <span><b><%= user.results.pluck(:points).sum %></b></span>
+            <span><b><%= user.results.pluck(:points).sum.round(2) %></b></span>
           </p>
           <p>
             <span>Різниця: </span>
