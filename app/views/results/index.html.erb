@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Учасник</th>
+      <th></th>
       <% @segments.each do |segment| %>
         <th><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></th>
       <% end %>
@@ -15,16 +16,22 @@
           <p class="user-avatar"><%=image_tag "avatars/#{user.bib}.jpg", height: '96', width: '96'%></p>
           <p class="user-name"><%=link_to user.full_name, "#{user.link}", target: "_blank" %></p>
           <p>
-            <span><b>Місце: </b></span>
-            <span><%= index + 1 %></span>
-          </p>
-          <p>
-            <span><b>Рейтинг: </b></span>
-            <span><%= user.results.pluck(:points).sum %></span>
-          </p>
-          <p>
             <span><b>bib: </b></span>
             <span><%= user.bib %></span>
+          </p>
+        </td>
+        <td>
+          <p>
+            <span>Рейтинг: </span>
+            <span><b><%= user.results.pluck(:points).sum %></b></span>
+          </p>
+          <p>
+            <span>Різниця: </span>
+            <span><b><%= @users.first.results.pluck(:points).sum - user.results.pluck(:points).sum %></b></span>
+          </p>
+          <p>
+            <span>Місце: </span>
+            <span><b><%= index + 1 %></b></span>
           </p>
         </td>
         <% user.results.order(:segment_id).each do |result| %>
