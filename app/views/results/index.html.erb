@@ -27,7 +27,7 @@
           </p>
           <p>
             <span>Різниця: </span>
-            <span><b><%= @users.first.results.pluck(:points).sum - user.results.pluck(:points).sum %></b></span>
+            <span><b><%= (@lider - user.results.pluck(:points).sum).round(2) %></b></span>
           </p>
           <p>
             <span>Місце: </span>
