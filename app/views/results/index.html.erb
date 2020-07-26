@@ -9,11 +9,19 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.each_with_index do |user, index| %>
       <tr>
         <td>
           <p class="user-avatar"><%=image_tag "avatars/#{user.bib}.jpg", height: '96', width: '96'%></p>
           <p class="user-name"><%=link_to user.full_name, "#{user.link}", target: "_blank" %></p>
+          <p>
+            <span><b>Місце: </b></span>
+            <span><%= index + 1 %></span>
+          </p>
+          <p>
+            <span><b>Рейтинг: </b></span>
+            <span><%= user.results.pluck(:points).sum %></span>
+          </p>
           <p>
             <span><b>bib: </b></span>
             <span><%= user.bib %></span>
