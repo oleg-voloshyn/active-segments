@@ -15,3 +15,20 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+if ($("#table-1").length) {
+  var tableOffset = $("#table-1").offset().top;
+  var $header = $("#table-1 > thead").clone();
+  var $fixedHeader = $("#header-fixed").append($header);
+
+  $(window).bind("scroll", function() {
+      var offset = $(this).scrollTop();
+
+      if (offset >= tableOffset && $fixedHeader.is(":hidden")) {
+          $fixedHeader.show();
+      }
+      else if (offset < tableOffset) {
+          $fixedHeader.hide();
+      }
+  });
+}
