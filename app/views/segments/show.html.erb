@@ -21,14 +21,14 @@
         <td>
           <p>
             <span>Рейтинг: </span>
-            <span><b><%= user.results.pluck(:points).sum.round(2) %></b></span>
+            <span><b><%= user.results.find_by(segment_id: @segment.id).points.round(2) %></b></span>
           </p>
           <p>
             <span>Різниця: </span>
-            <span><b><%= (@lider - user.results.pluck(:points).sum).round(2) %></b></span>
+            <span><b><%= (@lider - user.results.find_by(segment_id: @segment.id).points).round(2) %></b></span>
           </p>
           <p>
-            <span>Місце: </span>
+            <span>Місце в сегменті: </span>
             <span><b><%= index + 1 %></b></span>
           </p>
           <p>
