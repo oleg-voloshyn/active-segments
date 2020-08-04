@@ -4,7 +4,12 @@
       <th>Учасник</th>
       <th></th>
       <% @segments.each do |segment| %>
-        <th><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></th>
+        <th>
+          <div><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></div>
+          <div>
+            <%=link_to "Чоловіки", segment_path(segment.id, gender: "male"), target: "_blank" %>
+            <%=link_to " Жінки", segment_path(segment.id, gender: "female"), target: "_blank" %>
+          </div></th>
       <% end %>
     </tr>
   </thead>
@@ -32,6 +37,10 @@
           <p>
             <span>Місце: </span>
             <span><b><%= index + 1 %></b></span>
+          </p>
+          <p>
+            <span>Кількість сегментів: </span>
+            <span><b><%= user.results.where.not(moving_time: 0).pluck(:segment_id).size %>/10</b></span>
           </p>
         </td>
         <% user.results.order(:segment_id).each do |result| %>

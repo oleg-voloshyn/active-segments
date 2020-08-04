@@ -1,9 +1,54 @@
-<p id="notice"><%= notice %></p>
+<table id="table-1">
+  <thead>
+    <tr>
+      <th>Учасник</th>
+      <th></th>
+      <th><%=link_to @segment.name, "https://www.strava.com/segments/#{@segment.link}", target: "_blank" %></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Name:</strong>
-  <%= @segment.name %>
-</p>
+  <tbody>
+    <% @users.each_with_index do |user, index| %>
+      <tr>
+        <td>
+          <p class="user-avatar"><%=image_tag "avatars/#{user.bib}.jpg", height: '96', width: '96'%></p>
+          <p class="user-name"><%=link_to user.full_name, "#{user.link}", target: "_blank" %></p>
+          <p>
+            <span><b>bib: </b></span>
+            <span><%= user.bib %></span>
+          </p>
+        </td>
+        <td>
+          <p>
+            <span>Рейтинг: </span>
+            <span><b><%= user.results.pluck(:points).sum.round(2) %></b></span>
+          </p>
+          <p>
+            <span>Різниця: </span>
+            <span><b><%= (@lider - user.results.pluck(:points).sum).round(2) %></b></span>
+          </p>
+          <p>
+            <span>Місце: </span>
+            <span><b><%= index + 1 %></b></span>
+          </p>
+          <p>
+            <span>Кількість сегментів: </span>
+            <span><b><%= user.results.where.not(moving_time: 0).pluck(:segment_id).size %>/10</b></span>
+          </p>
+        </td>
+        <%- result = user.results.find_by(segment_id: @segment.id) %>
+        <td>
+          <div>
+            <span><strong><%= result.points %></strong></span>
+          </div>
+          <div>
+            <span><strong>Час: </strong></span>
+            <span><%= seconds_to_hms(result.moving_time) %></span>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<table id="header-fixed"></table>
 
-<%= link_to 'Edit', edit_segment_path(@segment) %> |
-<%= link_to 'Back', segments_path %>
