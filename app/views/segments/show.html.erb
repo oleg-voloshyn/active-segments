@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th>Учасник</th>
-      <th></th>
+      <th> Крок:  <%= (@lider_results.find_by(segment_id: @segment.id).moving_time / 100).round(2) %> сек.</th>
       <th><%=link_to @segment.name, "https://www.strava.com/segments/#{@segment.link}", target: "_blank" %></th>
     </tr>
   </thead>

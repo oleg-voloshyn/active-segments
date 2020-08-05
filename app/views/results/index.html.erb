@@ -6,10 +6,16 @@
       <% @segments.each do |segment| %>
         <th>
           <div><%=link_to segment.name, "https://www.strava.com/segments/#{segment.link}", target: "_blank" %></div>
+          <br>
           <div>
             <%=link_to "Чоловіки", segment_path(segment.id, gender: "male"), target: "_blank" %>
             <%=link_to " Жінки", segment_path(segment.id, gender: "female"), target: "_blank" %>
-          </div></th>
+          </div>
+          <br>
+          <div>
+            Крок:  <%= (@lider_results.find_by(segment_id: segment.id).moving_time / 100).round(2) %> сек.
+          </div>
+        </th>
       <% end %>
     </tr>
   </thead>
