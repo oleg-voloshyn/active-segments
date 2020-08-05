@@ -13,7 +13,7 @@
           </div>
           <br>
           <div>
-            Крок:  <%= (@lider_results.find_by(segment_id: segment.id).moving_time / 100).round(2) %> сек.
+            Крок:  <%= (Result.where(segment_id: segment.id).pluck(:moving_time).min / 100).round(2) %> сек.
           </div>
         </th>
       <% end %>

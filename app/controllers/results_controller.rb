@@ -9,7 +9,6 @@ class ResultsController < InheritedResources::Base
                race.users.where(gender: "male").sort_by{ |user| user.results.pluck(:points).sum }.reverse
              end
     @lider = @users.first.results.pluck(:points).sum
-    @lider_results = @users.first.results
   end
 
   private
