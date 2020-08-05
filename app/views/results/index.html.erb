@@ -13,7 +13,7 @@
           </div>
           <br>
           <div>
-            Крок:  <%= (Result.where(segment_id: segment.id).where.not(moving_time: 0).pluck(:moving_time).min / 100).round(2) %> сек.
+            Крок:  <%= (Result.where(segment_id: segment.id).where.not(moving_time: 0).pluck(:moving_time).min / 100.0) %> сек.
           </div>
         </th>
       <% end %>
